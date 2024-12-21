@@ -16,17 +16,21 @@
                 clifford: '#da373d',
                 'main-color' : '#1DD100',
                 'light-color' : '#e8fae6',
+                'orange-color' : '#FFBF0F',
+                'pink-color' : '#F78C9C',
+                'grey-color' : '#F7F8F8',
               },
               fontFamily: {
                 raleway: ['Raleway'],
+                inter: ['Inter'],
               }
             }
           }
         }
       </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="font-raleway">
     <header>
@@ -72,7 +76,7 @@
       </div>
     </header>
     <section class="px-5 lg:px-14">
-        <div class="hero bg-no-repeat rounded-xl" style="background-image: url(./Assets/Images/banner.png);">
+        <div class="hero bg-no-repeat rounded-3xl" style="background-image: url(./Assets/Images/banner.png);">
             <img class="invisible w-full" src="./Assets/Images/banner.png" alt="">
   <div class="hero-content max-w-screen-md 2xl:max-w-5xl text-neutral-content text-center">
     <div class="">
@@ -84,6 +88,113 @@
     </div>
   </div>
 </div>
+    </section>
+    <section class="px-5 lg:px-14 flex justify-center gap-5 -mt-14 font-inter">
+      <div class="stats border-b-4 border-main-color">
+        <div class="stat p-7">
+          <div class="stat-figure text-secondary col-start-1">
+            <img src="./Assets/Icons/people.png" alt="Registered Users" srcset="">
+          </div>
+          <div class="stat-value col-start-2">500K+</div>
+          <div class="stat-title col-start-2">Registered Users</div>
+        </div>
+      </div>
+      <div class="stats border-b-4 border-main-color">
+        <div class="stat p-7">
+          <div class="stat-figure text-secondary col-start-1">
+            <img src="./Assets/Icons/ticket-cupon.png" alt="Registered Users" srcset="">
+          </div>
+          <div class="stat-value col-start-2">1.7 Lacks</div>
+          <div class="stat-title col-start-2">Tickets sold</div>
+        </div>
+      </div>
+      <div class="stats border-b-4 border-main-color">
+        <div class="stat p-7">
+          <div class="stat-figure text-secondary col-start-1">
+            <img src="./Assets/Icons/stoppage.png" alt="Registered Users" srcset="">
+          </div>
+          <div class="stat-value col-start-2">80K+</div>
+          <div class="stat-title col-start-2">Rental partners</div>
+        </div>
+      </div>
+    </section>
+    <section class="px-5 lg:px-14 mb-24">
+      <h2 class="text-center font-bold text-5xl mt-24 mb-16">Best offers for you</h2>
+      <div class="flex gap-10 justify-center mb-16">
+        <div class="bg-orange-color flex w-fit rounded-3xl">
+          <div class="stats bg-transparent">
+            <div class="stat flex flex-col justify-center font-inter px-10">
+              <div class="stat-value text-5xl font-extrabold">15% OFF</div>
+              <div class="stat-title text-black text-xl font-semibold">on your next purchase</div>
+              <div class="stat-desc text-lg font-semibold">use by January 2024</div>
+            </div>
+          </div>
+          <img src="./Assets/Images/cupon-devider.png" alt="">
+          <div class="stats bg-transparent">
+            <div class="stat flex flex-col justify-center text-center px-10">              
+              <div class="stat-value font-bold">NEW15</div>
+              <div class="stat-title text-lg">Coupon Code</div>
+            </div>
+          </div>
+      </div>
+        <div class="bg-pink-color flex w-fit rounded-3xl">
+          <div class="stats bg-transparent">
+            <div class="stat flex flex-col justify-center font-inter px-10">
+              <div class="stat-value text-5xl font-extrabold">20% OFF</div>
+              <div class="stat-title text-black text-xl font-semibold">on your next purchase</div>
+              <div class="stat-desc text-lg font-semibold">use by January 2024</div>
+            </div>
+          </div>
+          <img src="./Assets/Images/cupon-devider.png" alt="">
+          <div class="stats bg-transparent">
+            <div class="stat flex flex-col justify-center text-center ps-2 pr-5">              
+              <div class="stat-value font-bold">Couple 20</div>
+              <div class="stat-title text-lg">Coupon Code</div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="text-center"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline border-main-color text-main-color hover:bg-main-color hover:border-main-color">Responsive</button></div>
+    </section>
+    <section class="rounded-t-3xl bg-grey-color p-5 lg:p-24 border-t-4 border-main-color">
+      <h2 class="text-center font-bold text-5xl mb-10">Expedition Bliss</h2>
+      <p class="font-inter text-center mb-10 text-slate-500">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
+      <div class="bg-white rounded-3xl flex justify-between">
+        <div class="p-8 grow">
+          <div class="flex justify-between mb-8">
+            <div class="flex gap-5">
+              <img src="./Assets/Icons/bus-logo.png" alt="Bus" srcset="">
+              <div>
+                <h3 class="font-bold text-3xl">Greenline Travels</h3>
+                <p class="font-inter">Coach-008-XDA | AC_Luxury</p>
+              </div>
+            </div>
+            <button class="btn font-inter text-main-color bg-light-color border-0 hover:bg-light-color">
+              <img src="./Assets/Icons/seat-green.png" alt="Seat" srcset="">
+            40 Seats Left
+            </button>
+          </div>
+          <div class="bg-grey-color p-8 rounded-xl">
+            <div class="flex justify-between border-dashed border-b-2 pb-8">
+              <span>Route</span><span>Dhaka-Sylhet</span>
+            </div>
+            <div class="flex justify-between border-dashed border-b-2 py-8">
+              <span>Departure Time</span><span>9:00 PM</span>
+            </div>
+            <div class="flex justify-between gap-8 pt-8">
+              <button class="btn grow">Boarding Point - Laxmipur</button>
+              <button class="btn grow">Dropping Point - Bogura</button>
+              <button class="btn grow">Est. Time - 11 Hour</button>
+            </div>
+          </div>
+        </div>
+        <img src="./Assets/Images/info-devider.png" alt="ticket" srcset="">
+        <div class="text-center place-items-center flex flex-col justify-center p-10 pe-20">
+          <img src="./Assets/Icons/fare.png" alt="Fare" srcset="">
+          <h3 class="font-bold text-3xl">550 Taka</h3>
+          <p class="font-bold text-xl text-gray-500">Per Seat</p>
+        </div>
+      </div>
     </section>
     <script src="./script.js"></script>
 </body>
