@@ -212,10 +212,17 @@
           </div>
           <div class="flex gap-12">
             <div class="flex grow">
-              <div id="serial" class="grid items-center mr-8 justify-items-center gap-7"></div>
-              <div id="firstCol" class="grid grid-cols-2 grow gap-7"></div>
+              <div id="serial" class="grid items-center mr-8 justify-items-center gap-7 grid-rows-11">
+                <div></div>
+              </div>
+              <div id="firstCol" class="grid grid-cols-2 grow gap-7 grid-rows-11">
+                <div disabled></div>
+                <div disabled></div>
+              </div>
             </div>
-            <div id="secondCol" class="grid grid-cols-2 grow gap-7"></div>
+            <div id="secondCol" class="grid grid-cols-2 grow gap-7 grid-rows-11">
+              <button class="btn col-start-2" disabled><img src="./Assets/Icons/steering.svg" alt=""></button>
+            </div>
           </div>
         </div>
         <div class="divider divider-horizontal before:border-r-2 before:border-gray-300 before:border-dashed before:bg-transparent after:border-r-2 after:border-gray-300 after:border-dashed after:bg-transparent m-0 w-0 px-8"></div>
