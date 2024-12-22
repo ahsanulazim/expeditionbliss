@@ -34,7 +34,7 @@
 </head>
 <body class="font-raleway">
     <header>
-    <div class="navbar bg-base-100 px-5 lg:px-14 min-h-24">
+    <div class="navbar bg-base-100 px-5 lg:px-24 min-h-24">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden ps-0">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </header>
-    <section class="px-5 lg:px-14">
+    <section class="px-5 lg:px-24">
         <div class="hero bg-no-repeat rounded-3xl" style="background-image: url(./Assets/Images/banner.png);">
             <img class="invisible w-full" src="./Assets/Images/banner.png" alt="">
   <div class="hero-content max-w-screen-md 2xl:max-w-5xl text-neutral-content text-center">
@@ -89,7 +89,7 @@
   </div>
 </div>
     </section>
-    <section class="px-5 lg:px-14 flex justify-center gap-5 -mt-14 font-inter">
+    <section class="px-5 lg:px-24 flex justify-center gap-5 -mt-14 font-inter">
       <div class="stats border-b-4 border-main-color">
         <div class="stat p-7">
           <div class="stat-figure text-secondary col-start-1">
@@ -118,7 +118,7 @@
         </div>
       </div>
     </section>
-    <section class="px-5 lg:px-14 mb-24">
+    <section class="px-5 lg:px-24 mb-24">
       <h2 class="text-center font-bold text-5xl mt-24 mb-16">Best offers for you</h2>
       <div class="flex gap-10 justify-center mb-16">
         <div class="bg-orange-color flex w-fit rounded-3xl">
@@ -154,12 +154,12 @@
           </div>
       </div>
       </div>
-      <div class="text-center"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline border-main-color text-main-color hover:bg-main-color hover:border-main-color">Responsive</button></div>
+      <div class="text-center"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline border-main-color text-main-color hover:bg-main-color hover:border-main-color">See All Offers</button></div>
     </section>
     <section class="rounded-t-3xl bg-grey-color p-5 lg:p-24 border-t-4 border-main-color">
       <h2 class="text-center font-bold text-5xl mb-10">Expedition Bliss</h2>
       <p class="font-inter text-center mb-10 text-slate-500">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
-      <div class="bg-white rounded-3xl flex justify-between">
+      <div class="bg-white rounded-3xl flex justify-between mb-8">
         <div class="p-8 grow">
           <div class="flex justify-between mb-8">
             <div class="flex gap-5">
@@ -182,9 +182,9 @@
               <span>Departure Time</span><span>9:00 PM</span>
             </div>
             <div class="flex justify-between gap-8 pt-8">
-              <button class="btn grow">Boarding Point - Laxmipur</button>
-              <button class="btn grow">Dropping Point - Bogura</button>
-              <button class="btn grow">Est. Time - 11 Hour</button>
+              <button class="btn grow bg-gray-300">Boarding Point - Laxmipur</button>
+              <button class="btn grow bg-gray-300">Dropping Point - Bogura</button>
+              <button class="btn grow bg-gray-300">Est. Time - 11 Hour</button>
             </div>
           </div>
         </div>
@@ -193,6 +193,83 @@
           <img src="./Assets/Icons/fare.png" alt="Fare" srcset="">
           <h3 class="font-bold text-3xl">550 Taka</h3>
           <p class="font-bold text-xl text-gray-500">Per Seat</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl flex justify-between p-8">
+        <div class="grow">
+          <div class="flex flex-col gap-y-5 mb-8">
+            <h4 class="text-xl font-bold">Select Your Seat</h4>
+            <hr>
+            <div class="flex justify-between">
+              <div class="flex items-center font-inter">
+                <img src="./Assets/Icons/seat-gray.png" alt="seat" srcset="">Available
+              </div>
+              <div class="flex items-center font-inter text-main-color">
+                <img src="./Assets/Icons/seat-green-filled.png" alt="seat" srcset="">Selected
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="flex gap-12">
+            <div class="flex grow">
+              <div id="serial" class="grid items-center mr-8 justify-items-center gap-7"></div>
+              <div id="firstCol" class="grid grid-cols-2 grow gap-7"></div>
+            </div>
+            <div id="secondCol" class="grid grid-cols-2 grow gap-7"></div>
+          </div>
+        </div>
+        <div class="divider divider-horizontal before:border-r-2 before:border-gray-300 before:border-dashed before:bg-transparent after:border-r-2 after:border-gray-300 after:border-dashed after:bg-transparent m-0 w-0 px-8"></div>
+        <div class="grow">
+          <h4 class="mb-5 text-xl font-bold">Select Your Seat</h4>
+          <hr>
+<!-- Billing Side -->
+          <div class="bg-grey-color p-8 rounded-2xl mt-8">
+            <div class="overflow-x-auto">
+              <table class="table border-b-2 border-b-gray-300 mb-3">
+                <!-- head -->
+                <thead  class="border-dashed border-b-2 border-b-gray-300">
+                  <tr>
+                    <th class="pl-0 pt-0 text-black">Seat</th>
+                    <th class="pl-0 pt-0 text-black">Class</th>
+                    <th class="pl-0 pt-0 text-black">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- row 1 -->
+                  <tr>
+                    <td class="pl-0">Cy Ganderton</td>
+                    <td class="pl-0">Economy</td>
+                    <td class="pl-0">Blue</td>
+                  </tr>
+                  <!-- row 2 -->
+                  <tr>
+                    <td class="pl-0">Hart Hagerty</td>
+                    <td class="pl-0">Economy</td>
+                    <td class="pl-0">Purple</td>
+                  </tr>
+                  <!-- row 3 -->
+                  <tr>
+                    <td class="pl-0">Brice Swyre</td>
+                    <td class="pl-0">Economy</td>
+                    <td class="pl-0">Red</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="flex justify-between font-inter mb-3">
+                <span>Total Price</span>
+                <span>BDT 2000</span>
+              </div>
+              <div class="bg-white relative w-full p-2 rounded-xl mb-3">
+                <input type="text" placeholder="Have any coupon?" class="input input-white w-full max-w-screen-xl focus:outline-none
+                focus:border-0 " />
+                <button class="btn bg-main-color text-white hover:bg-black border-0 absolute right-2">Apply</button>
+              </div>
+              <div class="flex justify-between font-inter">
+                <span>Grand Total</span>
+                <span>BDT 2000</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
