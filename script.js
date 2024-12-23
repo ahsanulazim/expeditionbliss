@@ -17,7 +17,7 @@ for (let i = 0; i < seat.length; i++) {
 
         const inputSeat = document.createElement("input");
         inputSeat.setAttribute("type", "button");
-        inputSeat.setAttribute("class", "hotSeat btn font-inter block");
+        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0");
         inputSeat.setAttribute("value", `${seatCount}`);
         firstCol.appendChild(inputSeat);
     }
@@ -26,8 +26,46 @@ for (let i = 0; i < seat.length; i++) {
 
         const inputSeat = document.createElement("input");
         inputSeat.setAttribute("type", "button");
-        inputSeat.setAttribute("class", "hotSeat btn font-inter block");
+        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0");
         inputSeat.setAttribute("value", `${seatCount}`);
         secondCol.appendChild(inputSeat);
     }
+}
+
+const hotSeat = document.getElementsByClassName("hotSeat");
+const msg = document.getElementById("msg");
+const sSeat = [];
+
+for (let h = 0; h < hotSeat.length; h++) {
+    hotSeat[h].addEventListener("click", function () {
+        let seatIndex = sSeat.indexOf(hotSeat[h].value);
+        if (seatIndex == -1) {
+            if (sSeat.length < 4) {
+                sSeat.push(hotSeat[h].value);
+                hotSeat[h].classList.add("bg-main-color");
+                hotSeat[h].classList.add("hover:bg-green-600");
+
+                const selectedLi = document.createElement('tr');
+                selectedLi.innerHTML = `<td class="pl-0">${hotSeat[h].value}</td>
+                    <td class="pl-0">Economy</td>
+                    <td class="pr-0 text-right">550</td>`;
+                selectedLi.setAttribute('id', `seat-${hotSeat[h].value}`);
+                msg.appendChild(selectedLi);
+            } else {
+                alert("You can select up to 4 seats only!");
+            }
+
+        } else {
+            sSeat.splice(seatIndex, 1)
+            hotSeat[h].classList.remove("bg-main-color");
+            hotSeat[h].classList.remove("hover:bg-green-600");
+            console.log("Exists");
+            const existingSelSeat = document.getElementById(`seat-${hotSeat[h].value}`);
+            if (existingSelSeat) {
+                msg.removeChild(existingSelSeat);
+            }
+        }
+        console.log(sSeat);
+    });
+
 }

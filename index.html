@@ -199,16 +199,19 @@
         <div class="grow">
           <div class="flex flex-col gap-y-5 mb-8">
             <h4 class="text-xl font-bold">Select Your Seat</h4>
-            <hr>
-            <div class="flex justify-between">
+            <hr class="border-0 border-b-2 border-dashed">
+            <div class="flex justify-between text-lg">
               <div class="flex items-center font-inter">
-                <img src="./Assets/Icons/seat-gray.png" alt="seat" srcset="">Available
+                <img src="./Assets/Icons/seat-black.png" alt="seat" srcset="">Available
+              </div>
+              <div class="flex items-center font-inter text-zinc-500">
+                <img src="./Assets/Icons/seat-gray.png" alt="seat" srcset="">Booked
               </div>
               <div class="flex items-center font-inter text-main-color">
                 <img src="./Assets/Icons/seat-green-filled.png" alt="seat" srcset="">Selected
               </div>
             </div>
-            <hr>
+            <hr class="border-0 border-b-2 border-dashed">
           </div>
           <div class="flex gap-12">
             <div class="flex grow">
@@ -228,41 +231,24 @@
         <div class="divider divider-horizontal before:border-r-2 before:border-gray-300 before:border-dashed before:bg-transparent after:border-r-2 after:border-gray-300 after:border-dashed after:bg-transparent m-0 w-0 px-8"></div>
         <div class="grow">
           <h4 class="mb-5 text-xl font-bold">Select Your Seat</h4>
-          <hr>
+          <hr class="border-0 border-b-2 border-dashed">
 <!-- Billing Side -->
           <div class="bg-grey-color p-8 rounded-2xl mt-8">
             <div class="overflow-x-auto">
-              <table class="table border-b-2 border-b-gray-300 mb-3">
+              <table class="table border-b-2 border-b-gray-300 mb-3 font-inter">
                 <!-- head -->
                 <thead  class="border-dashed border-b-2 border-b-gray-300">
-                  <tr>
+                  <tr class="text-base">
                     <th class="pl-0 pt-0 text-black">Seat</th>
                     <th class="pl-0 pt-0 text-black">Class</th>
-                    <th class="pl-0 pt-0 text-black">Price</th>
+                    <th class="pr-0 pt-0 text-black text-right">Price</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <!-- row 1 -->
-                  <tr>
-                    <td class="pl-0">Cy Ganderton</td>
-                    <td class="pl-0">Economy</td>
-                    <td class="pl-0">Blue</td>
-                  </tr>
-                  <!-- row 2 -->
-                  <tr>
-                    <td class="pl-0">Hart Hagerty</td>
-                    <td class="pl-0">Economy</td>
-                    <td class="pl-0">Purple</td>
-                  </tr>
-                  <!-- row 3 -->
-                  <tr>
-                    <td class="pl-0">Brice Swyre</td>
-                    <td class="pl-0">Economy</td>
-                    <td class="pl-0">Red</td>
-                  </tr>
+                <tbody id="msg">
+                  
                 </tbody>
               </table>
-              <div class="flex justify-between font-inter mb-3">
+              <div class="flex justify-between font-inter mb-3 font-bold">
                 <span>Total Price</span>
                 <span>BDT 2000</span>
               </div>
@@ -271,7 +257,7 @@
                 focus:border-0 " />
                 <button class="btn bg-main-color text-white hover:bg-black border-0 absolute right-2">Apply</button>
               </div>
-              <div class="flex justify-between font-inter">
+              <div class="flex justify-between font-inter font-bold">
                 <span>Grand Total</span>
                 <span>BDT 2000</span>
               </div>
