@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expedition Bliss | Making Journey Interesting</title>
-    <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./Assets/Icons/bus-icon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -233,13 +232,13 @@
           <h4 class="mb-5 text-xl font-bold">Select Your Seat</h4>
           <hr class="border-0 border-b-2 border-dashed">
 <!-- Billing Side -->
-          <div class="bg-grey-color p-8 rounded-2xl mt-8">
+          <div class="bg-grey-color p-8 rounded-2xl my-8">
             <div class="overflow-x-auto">
-              <table class="table border-b-2 border-b-gray-300 mb-3 font-inter">
+              <table class="table border-b-2 border-b-gray-300 mb-3 font-inter rounded-none">
                 <!-- head -->
                 <thead  class="border-dashed border-b-2 border-b-gray-300">
                   <tr class="text-base">
-                    <th class="pl-0 pt-0 text-black">Seat</th>
+                    <th class="pl-0 pt-0 text-black">Seat <div class="badge bg-main-color text-white" id="selectCount"></div></th>
                     <th class="pl-0 pt-0 text-black">Class</th>
                     <th class="pr-0 pt-0 text-black text-right">Price</th>
                   </tr>
@@ -248,9 +247,23 @@
                   
                 </tbody>
               </table>
+              <div role="alert" class="alert alert-error border-0 hidden" id="extraSit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-inter">You can select up to 4 seats only!</span>
+              </div>
               <div class="flex justify-between font-inter mb-3 font-bold">
                 <span>Total Price</span>
-                <span>BDT 2000</span>
+                <span id="totalFare"></span>
               </div>
               <div class="bg-white relative w-full p-2 rounded-xl mb-3">
                 <input type="text" placeholder="Have any coupon?" class="input input-white w-full max-w-screen-xl focus:outline-none
@@ -262,6 +275,19 @@
                 <span>BDT 2000</span>
               </div>
             </div>
+          </div>
+          <label class="form-control w-full max-w-full mb-5">
+              <label class="label font-bold pt-0" for="name">Passenger Name</label>
+            <input type="text" id="name" placeholder="Enter your name" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
+              <label class="label font-bold pt-0" for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
+              <label class="label font-bold pt-0" for="Passenger Name" id="email">Email ID</label>
+            <input type="email" id="email" placeholder="Enter your email id" class="input input-bordered focus:outline-0 w-full max-w-full mb-6"/>
+            <button class="btn w-full bg-main-color text-white font-bold hover:bg-black">Next</button>
+          </label>
+          <div class="flex justify-around">
+            <a class="link link-neutral">Terms and Conditions</a>
+            <a class="link link-neutral">Cancellation Policy</a>
           </div>
         </div>
       </div>

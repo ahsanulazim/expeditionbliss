@@ -34,9 +34,14 @@ for (let i = 0; i < seat.length; i++) {
 
 const hotSeat = document.getElementsByClassName("hotSeat");
 const msg = document.getElementById("msg");
+const selectCount = document.getElementById("selectCount");
 const sSeat = [];
+let totalFare = document.getElementById("totalFare");
+let fare = document.getElementsByClassName("fare");
+const extraSit = document.getElementById("extraSit");
 
 for (let h = 0; h < hotSeat.length; h++) {
+    totalFare.innerText = `BDT ${0}`;
     hotSeat[h].addEventListener("click", function () {
         let seatIndex = sSeat.indexOf(hotSeat[h].value);
         if (seatIndex == -1) {
@@ -44,28 +49,34 @@ for (let h = 0; h < hotSeat.length; h++) {
                 sSeat.push(hotSeat[h].value);
                 hotSeat[h].classList.add("bg-main-color");
                 hotSeat[h].classList.add("hover:bg-green-600");
+                hotSeat[h].classList.add("text-white");
 
                 const selectedLi = document.createElement('tr');
                 selectedLi.innerHTML = `<td class="pl-0">${hotSeat[h].value}</td>
-                    <td class="pl-0">Economy</td>
-                    <td class="pr-0 text-right">550</td>`;
+                    <td class="pl-0">AC Luxury</td>
+                    <td class="pr-0 text-right fare">550</td>`;
                 selectedLi.setAttribute('id', `seat-${hotSeat[h].value}`);
                 msg.appendChild(selectedLi);
             } else {
-                alert("You can select up to 4 seats only!");
+                extraSit.classList.remove("hidden");
+                extraSit.classList.add("flex");
             }
 
         } else {
             sSeat.splice(seatIndex, 1)
             hotSeat[h].classList.remove("bg-main-color");
             hotSeat[h].classList.remove("hover:bg-green-600");
+            hotSeat[h].classList.remove("text-white");
             console.log("Exists");
             const existingSelSeat = document.getElementById(`seat-${hotSeat[h].value}`);
             if (existingSelSeat) {
+                extraSit.classList.remove("flex");
+                extraSit.classList.add("hidden");
                 msg.removeChild(existingSelSeat);
             }
         }
-        console.log(sSeat);
+        selectCount.innerText = 0 + sSeat.length;
+        totalFare.innerText = `BDT ${sSeat.length * 550}`;
     });
-
+    selectCount.innerText = 0;
 }
