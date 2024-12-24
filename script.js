@@ -90,9 +90,10 @@ for (let h = 0; h < hotSeat.length; h++) {
             const coupon = document.getElementById("coupon").value.toUpperCase();
             if (coupon === "NEW15") {
                 grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.15)}`;
-            }
-            else if (coupon === "COUPLE20") {
-                grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
+            } else if (sSeat.length == 2) {
+                if (coupon === "COUPLE20") {
+                    grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
+                }
             }
             else {
                 grandTotal.innerText = `BDT ${sSeat.length * 550}`;
