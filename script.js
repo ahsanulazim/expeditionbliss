@@ -39,6 +39,8 @@ const sSeat = [];
 let totalFare = document.getElementById("totalFare");
 let fare = document.getElementsByClassName("fare");
 const extraSit = document.getElementById("extraSit");
+const couponApply = document.getElementById("couponApply");
+const grandTotal = document.getElementById("grandTotal");
 
 for (let h = 0; h < hotSeat.length; h++) {
     totalFare.innerText = `BDT ${0}`;
@@ -57,9 +59,14 @@ for (let h = 0; h < hotSeat.length; h++) {
                     <td class="pr-0 text-right fare">550</td>`;
                 selectedLi.setAttribute('id', `seat-${hotSeat[h].value}`);
                 msg.appendChild(selectedLi);
+
             } else {
                 extraSit.classList.remove("hidden");
                 extraSit.classList.add("flex");
+                setInterval(function () {
+                    extraSit.classList.remove("flex");
+                    extraSit.classList.add("hidden");
+                }, 3000);
             }
 
         } else {
@@ -77,6 +84,21 @@ for (let h = 0; h < hotSeat.length; h++) {
         }
         selectCount.innerText = 0 + sSeat.length;
         totalFare.innerText = `BDT ${sSeat.length * 550}`;
+        grandTotal.innerText = `BDT ${sSeat.length * 550}`;
+        (sSeat.length == 0 || sSeat.length == 1) ? couponApply.setAttribute("disabled", "") : couponApply.removeAttribute("disabled", "");
+        couponApply.addEventListener("click", function () {
+            const coupon = document.getElementById("coupon").value.toUpperCase();
+            if (coupon === "NEW15") {
+                grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.15)}`;
+            }
+            else if (coupon === "COUPLE20") {
+                grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
+            }
+            else {
+                grandTotal.innerText = `BDT ${sSeat.length * 550}`;
+            }
+            console.log(coupon);
+        })
     });
     selectCount.innerText = 0;
 }

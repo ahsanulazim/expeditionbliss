@@ -267,24 +267,24 @@
               </div>
               <div class="bg-white relative w-full p-2 rounded-xl mb-3">
                 <input type="text" placeholder="Have any coupon?" class="input input-white w-full max-w-screen-xl focus:outline-none
-                focus:border-0 " />
-                <button class="btn bg-main-color text-white hover:bg-black border-0 absolute right-2">Apply</button>
+                focus:border-0 " id="coupon"/>
+                <button class="btn bg-main-color text-white hover:bg-black border-0 absolute right-2" id="couponApply" disabled>Apply</button>
               </div>
               <div class="flex justify-between font-inter font-bold">
                 <span>Grand Total</span>
-                <span>BDT 2000</span>
+                <span id="grandTotal">BDT 0</span>
               </div>
             </div>
           </div>
-          <label class="form-control w-full max-w-full mb-5">
-              <label class="label font-bold pt-0" for="name">Passenger Name</label>
+          <form class="form-control w-full max-w-full mb-5">
+              <label class="label font-bold pt-0 justify-start" for="name">Passenger Name <span class="text-red-600">*</span></label>
             <input type="text" id="name" placeholder="Enter your name" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
-              <label class="label font-bold pt-0" for="phone">Phone Number</label>
+              <label class="label font-bold pt-0 justify-start" for="phone">Phone Number <span class="text-red-600">*</span></label>
             <input type="tel" id="phone" placeholder="Enter your phone number" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
               <label class="label font-bold pt-0" for="Passenger Name" id="email">Email ID</label>
             <input type="email" id="email" placeholder="Enter your email id" class="input input-bordered focus:outline-0 w-full max-w-full mb-6"/>
-            <button class="btn w-full bg-main-color text-white font-bold hover:bg-black">Next</button>
-          </label>
+            <button class="btn w-full bg-main-color text-white font-bold hover:bg-black" type="submit">Next</button>
+          </form>
           <div class="flex justify-around">
             <a class="link link-neutral">Terms and Conditions</a>
             <a class="link link-neutral">Cancellation Policy</a>
