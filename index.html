@@ -32,8 +32,8 @@
    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="font-raleway">
-    <header>
-    <div class="navbar bg-base-100 px-5 lg:px-24 min-h-24">
+    <header class="px-5">
+    <div class="navbar min-h-24 max-w-7xl mx-auto px-0">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden ps-0">
@@ -59,7 +59,7 @@
             <li><a>Search</a></li>
             </ul>
           </div>
-          <a class="btn btn-ghost text-xl p-0">Expedition Bliss</a>
+          <a class="btn btn-ghost text-xl p-0 font-extrabold">Expedition Bliss</a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 font-medium">
@@ -74,21 +74,23 @@
         </div>
       </div>
     </header>
-    <section class="px-5 lg:px-24">
-        <div class="hero bg-no-repeat rounded-3xl" style="background-image: url(./Assets/Images/banner.png);">
+    <!-- Banner Section -->
+    <section class="px-5">
+        <div class="hero bg-no-repeat rounded-3xl max-w-7xl mx-auto" style="background-image: url(./Assets/Images/banner.png);">
             <img class="invisible w-full" src="./Assets/Images/banner.png" alt="">
   <div class="hero-content max-w-screen-md 2xl:max-w-5xl text-neutral-content text-center">
     <div class="">
-      <h1 class="mb-5 text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold text-white">End-to-End Travel with <span class="text-main-color">Expedition Bliss</span></h1>
-      <p class="mb-5 text-xs md:text-base lg:text-lg 2xl:text-2xl">
+      <h1 class="mb-5 text-3xl md:text-5xl lg:text-6xl font-extrabold text-white">End-to-End Travel with <span class="text-main-color">Expedition Bliss</span></h1>
+      <p class="mb-5 text-xs md:text-base lg:text-lg max-w-2xl mx-auto">
         Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
       </p>
-      <button class="btn bg-main-color text-black border-0 h-auto min-h-7 md:min-h-10 px-2 md:px-3 lg:px-4 lg:min-h-12 text-xs md:text-lg lg:text-xl 2xl:text-2xl font-bold hover:bg-black hover:text-main-color">Buy Tickets</button>
+      <button class="btn bg-main-color text-black border-0 h-auto min-h-7 md:min-h-10 px-2 md:px-3 lg:px-4 lg:min-h-12 text-xs md:text-lg lg:text-xl font-bold hover:bg-black hover:text-main-color">Buy Tickets</button>
     </div>
   </div>
 </div>
     </section>
-    <section class="px-5 lg:px-24 flex justify-center gap-5 -mt-14 font-inter">
+    <!-- Stats Section -->
+    <section class="px-5 max-w-7xl mx-auto flex justify-center gap-5 -mt-14 font-inter">
       <div class="stats border-b-4 border-main-color">
         <div class="stat p-7">
           <div class="stat-figure text-secondary col-start-1">
@@ -117,48 +119,51 @@
         </div>
       </div>
     </section>
-    <section class="px-5 lg:px-24 mb-24">
-      <h2 class="text-center font-bold text-5xl mt-24 mb-16">Best offers for you</h2>
-      <div class="flex gap-10 justify-center mb-16">
-        <div class="bg-orange-color flex w-fit rounded-3xl">
-          <div class="stats bg-transparent">
-            <div class="stat flex flex-col justify-center font-inter px-10">
-              <div class="stat-value text-5xl font-extrabold">15% OFF</div>
+    <section class="px-5 mb-24">
+      <div class="max-w-7xl mx-auto">
+      <h2 class="text-center font-bold text-4xl mt-24 mb-16">Best offers for you</h2>
+      <div class="flex gap-10 justify-between mb-16 flex-col lg:flex-row">
+        <div class="bg-orange-color flex w-full rounded-3xl justify-between">
+          <div class="stats bg-transparent grow">
+            <div class="stat flex flex-col justify-center font-inter mx-auto max-w-52 px-0">
+              <div class="stat-value text-3xl xl:text-4xl font-extrabold">15% OFF</div>
               <div class="stat-title text-black text-xl font-semibold">on your next purchase</div>
               <div class="stat-desc text-lg font-semibold">use by January 2024</div>
             </div>
           </div>
           <img src="./Assets/Images/cupon-devider.png" alt="">
-          <div class="stats bg-transparent">
-            <div class="stat flex flex-col justify-center text-center px-10">              
-              <div class="stat-value font-bold">NEW15</div>
+          <div class="stats bg-transparent grow">
+            <div class="stat flex flex-col justify-center text-center p-0">              
+              <div class="stat-value font-bold text-3xl">NEW15</div>
               <div class="stat-title text-lg">Coupon Code</div>
             </div>
           </div>
       </div>
-        <div class="bg-pink-color flex w-fit rounded-3xl">
-          <div class="stats bg-transparent">
-            <div class="stat flex flex-col justify-center font-inter px-10">
-              <div class="stat-value text-5xl font-extrabold">20% OFF</div>
+        <div class="bg-pink-color flex w-full rounded-3xl justify-between">
+          <div class="stats bg-transparent grow">
+            <div class="stat flex flex-col justify-center font-inter mx-auto max-w-52 px-0">
+              <div class="stat-value text-4xl font-extrabold">20% OFF</div>
               <div class="stat-title text-black text-xl font-semibold">on your next purchase</div>
               <div class="stat-desc text-lg font-semibold">use by January 2024</div>
             </div>
           </div>
           <img src="./Assets/Images/cupon-devider.png" alt="">
-          <div class="stats bg-transparent">
-            <div class="stat flex flex-col justify-center text-center ps-2 pr-5">              
-              <div class="stat-value font-bold">Couple 20</div>
+          <div class="stats bg-transparent grow">
+            <div class="stat flex flex-col justify-center text-center p-0">              
+              <div class="stat-value font-bold text-3xl">Couple 20</div>
               <div class="stat-title text-lg">Coupon Code</div>
             </div>
           </div>
       </div>
       </div>
       <div class="text-center"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline border-main-color text-main-color hover:bg-main-color hover:border-main-color">See All Offers</button></div>
+      </div>
     </section>
     <!-- Ticketing Section -->
-    <section class="rounded-t-3xl bg-grey-color p-5 lg:p-24 border-t-4 border-main-color">
-      <h2 class="text-center font-bold text-5xl mb-10">Expedition Bliss</h2>
-      <p class="font-inter text-center mb-10 text-slate-500">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
+    <section class="rounded-t-3xl bg-grey-color py-24 border-t-4 border-main-color">
+      <div class="max-w-7xl mx-auto">
+      <h2 class="text-center font-bold text-4xl mb-10">Expedition Bliss</h2>
+      <p class="font-inter text-center mb-10 text-slate-500 max-w-2xl mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
       <div class="bg-white rounded-3xl flex justify-between mb-8">
         <div class="p-8 grow">
           <div class="flex justify-between mb-8">
@@ -295,24 +300,25 @@
           </div>
         </div>
       </div>
+    </div>
     </section>
-    <footer class="bg-black text-white p-24">
-      <div class="max-w-screen-2xl mx-auto flex justify-between">
-        <div>
-          <h1 class="text-3xl font-bold mb-3">Expedition Bliss</h1>
-          <p class="font-inter max-w-96">Expedition Bliss is a digital platform to make your daily commuting better.</p>
+    <footer class="bg-black text-white px-5 py-24">
+      <div class="max-w-7xl mx-auto flex items-center lg:justify-between flex-col lg:flex-row">
+        <div class="mb-6 lg:mb-0">
+          <h1 class="text-3xl font-bold mb-3 text-center lg:text-left">Expedition Bliss</h1>
+          <p class="font-inter max-w-96 text-center mx-auto lg:text-left">Expedition Bliss is a digital platform to make your daily commuting better.</p>
         </div>
         <div class="text-right">
-          <h3 class="text-xl font-semibold mb-2">Download our app</h3>
+          <h3 class="text-2xl lg:text-xl font-semibold mb-2 text-center lg:text-right">Download our app</h3>
           <img class="max-w-48" src="./Assets/Icons/googleplay.png" alt="Google Play Store">
         </div>
       </div>
-      <hr class="max-w-screen-2xl mx-auto border-0 border-b-2 border-dashed border-gray-400 my-10">
-      <div class="max-w-screen-2xl mx-auto flex justify-between font-inter">
-        <p class="text-gray-400">© all rights reserved, Expedition Bliss services limited.2024</p>
+      <hr class="max-w-7xl mx-auto border-0 border-b-2 border-dashed border-gray-400 my-10">
+      <div class="max-w-7xl mx-auto flex lg:justify-between font-inter flex-col lg:flex-row items-center">
+        <p class="text-gray-400 text-center lg:text-left">© all rights reserved, Expedition Bliss services limited.2024</p>
         <div>
-          <a href="#" class="mr-7">Terms & Condition</a>
-          <a href="#" class="mr-7">Return & Refund Policy</a>
+          <a href="#" class="mr-5">Terms & Condition</a>
+          <a href="#" class="mr-5">Return & Refund Policy</a>
           <a href="#">Privacy Policy</a>
         </div>
       </div>
