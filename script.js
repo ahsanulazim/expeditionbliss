@@ -35,7 +35,8 @@ for (let i = 0; i < seat.length; i++) {
 const hotSeat = document.getElementsByClassName("hotSeat");
 const msg = document.getElementById("msg");
 const selectCount = document.getElementById("selectCount");
-const sSeat = [];
+var sSeat = [];
+const bookedSit = [];
 let totalFare = document.getElementById("totalFare");
 let fare = document.getElementsByClassName("fare");
 const extraSit = document.getElementById("extraSit");
@@ -51,10 +52,11 @@ for (let h = 0; h < hotSeat.length; h++) {
         if (seatIndex == -1) {
             if (sSeat.length < 4) {
                 sSeat.push(hotSeat[h].value);
+                bookedSit.push(hotSeat[h].value);
                 hotSeat[h].classList.add("bg-main-color");
                 hotSeat[h].classList.add("hover:bg-green-600");
                 hotSeat[h].classList.add("text-white");
-
+                hotSeat[h].setAttribute("id", hotSeat[h].value);
                 const selectedLi = document.createElement('tr');
                 selectedLi.innerHTML = `<td class="pl-0">${hotSeat[h].value}</td>
                     <td class="pl-0">AC Luxury</td>
@@ -73,6 +75,7 @@ for (let h = 0; h < hotSeat.length; h++) {
 
         } else {
             sSeat.splice(seatIndex, 1)
+            bookedSit.splice(seatIndex, 1)
             hotSeat[h].classList.remove("bg-main-color");
             hotSeat[h].classList.remove("hover:bg-green-600");
             hotSeat[h].classList.remove("text-white");
@@ -84,14 +87,15 @@ for (let h = 0; h < hotSeat.length; h++) {
             }
         }
 
-        //Next Button JS
-        (sSeat.length > 0) ? submit.removeAttribute("disabled") : submit.setAttribute("disabled", "");
-        //Next Button JS Ends
-
         selectCount.innerText = sSeat.length;
+        const selectCountNum = parseInt(selectCount.innerText);
+        //Next Button JS
+        (selectCountNum > 0) ? submit.removeAttribute("disabled") : submit.setAttribute("disabled", "");
+        //Next Button JS Ends
         totalFare.innerText = `BDT ${sSeat.length * 550}`;
         grandTotal.innerText = `BDT ${sSeat.length * 550}`;
         (sSeat.length == 0 || sSeat.length == 1) ? couponApply.setAttribute("disabled", "") : couponApply.removeAttribute("disabled", "");
+
         couponApply.addEventListener("click", function () {
             const coupon = document.getElementById("coupon").value.toUpperCase();
             if (coupon === "NEW15") {
@@ -143,13 +147,16 @@ for (let h = 0; h < hotSeat.length; h++) {
                 }, 5000);
             }
         })
+
     });
+
 }
 
 //Form Js Here
 
 const pname = document.getElementById("pname");
 const phone = document.getElementById("phone");
+
 
 submit.addEventListener("click", function () {
     if (pname.value == "" && phone.value == "") {
@@ -164,6 +171,14 @@ submit.addEventListener("click", function () {
     } else {
         pname.classList.remove("border-red-600");
         phone.classList.remove("border-red-600");
+        for (let s = 0; s < sSeat.length; s++) {
+            document.getElementById(sSeat[s]).setAttribute("disabled", "");
+        }
+        const sitLeft = document.getElementById("sitLeft");
+        sitLeft.innerText = 40 - bookedSit.length;
+        selectCount.innerText = 0;
+        sSeat = [];
+        msg.innerHTML = "";
+        submit.setAttribute("disabled", "");
     }
-
-})
+});

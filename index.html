@@ -155,6 +155,7 @@
       </div>
       <div class="text-center"><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline border-main-color text-main-color hover:bg-main-color hover:border-main-color">See All Offers</button></div>
     </section>
+    <!-- Ticketing Section -->
     <section class="rounded-t-3xl bg-grey-color p-5 lg:p-24 border-t-4 border-main-color">
       <h2 class="text-center font-bold text-5xl mb-10">Expedition Bliss</h2>
       <p class="font-inter text-center mb-10 text-slate-500">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
@@ -169,9 +170,7 @@
               </div>
             </div>
             <button class="btn font-inter text-main-color bg-light-color border-0 hover:bg-light-color">
-              <img src="./Assets/Icons/seat-green.png" alt="Seat" srcset="">
-            40 Seats Left
-            </button>
+              <img src="./Assets/Icons/seat-green.png" alt="Seat" srcset=""><span id="sitLeft">40</span>Seats Left</button>
           </div>
           <div class="bg-grey-color p-8 rounded-xl">
             <div class="flex justify-between border-dashed border-b-2 pb-8">
@@ -212,6 +211,9 @@
             </div>
             <hr class="border-0 border-b-2 border-dashed">
           </div>
+
+<!-- Seats HTML Buttons Here -->
+
           <div class="flex gap-12">
             <div class="flex grow">
               <div id="serial" class="grid items-center mr-8 justify-items-center gap-7 grid-rows-11">
@@ -294,6 +296,27 @@
         </div>
       </div>
     </section>
+    <footer class="bg-black text-white p-24">
+      <div class="max-w-screen-2xl mx-auto flex justify-between">
+        <div>
+          <h1 class="text-3xl font-bold mb-3">Expedition Bliss</h1>
+          <p class="font-inter max-w-96">Expedition Bliss is a digital platform to make your daily commuting better.</p>
+        </div>
+        <div class="text-right">
+          <h3 class="text-xl font-semibold mb-2">Download our app</h3>
+          <img class="max-w-48" src="./Assets/Icons/googleplay.png" alt="Google Play Store">
+        </div>
+      </div>
+      <hr class="max-w-screen-2xl mx-auto border-0 border-b-2 border-dashed border-gray-400 my-10">
+      <div class="max-w-screen-2xl mx-auto flex justify-between font-inter">
+        <p class="text-gray-400">© all rights reserved, Expedition Bliss services limited.2024</p>
+        <div>
+          <a href="#" class="mr-7">Terms & Condition</a>
+          <a href="#" class="mr-7">Return & Refund Policy</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
     <script src="./script.js"></script>
 </body>
 </html>
