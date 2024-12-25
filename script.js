@@ -41,6 +41,8 @@ let fare = document.getElementsByClassName("fare");
 const extraSit = document.getElementById("extraSit");
 const couponApply = document.getElementById("couponApply");
 const grandTotal = document.getElementById("grandTotal");
+const couponAlert = document.getElementById("couponAlert");
+const submit = document.getElementById("submit");
 
 for (let h = 0; h < hotSeat.length; h++) {
     totalFare.innerText = `BDT ${0}`;
@@ -66,7 +68,7 @@ for (let h = 0; h < hotSeat.length; h++) {
                 setInterval(function () {
                     extraSit.classList.remove("flex");
                     extraSit.classList.add("hidden");
-                }, 3000);
+                }, 5000);
             }
 
         } else {
@@ -74,7 +76,6 @@ for (let h = 0; h < hotSeat.length; h++) {
             hotSeat[h].classList.remove("bg-main-color");
             hotSeat[h].classList.remove("hover:bg-green-600");
             hotSeat[h].classList.remove("text-white");
-            console.log("Exists");
             const existingSelSeat = document.getElementById(`seat-${hotSeat[h].value}`);
             if (existingSelSeat) {
                 extraSit.classList.remove("flex");
@@ -82,7 +83,12 @@ for (let h = 0; h < hotSeat.length; h++) {
                 msg.removeChild(existingSelSeat);
             }
         }
-        selectCount.innerText = 0 + sSeat.length;
+
+        //Next Button JS
+        (sSeat.length > 0) ? submit.removeAttribute("disabled") : submit.setAttribute("disabled", "");
+        //Next Button JS Ends
+
+        selectCount.innerText = sSeat.length;
         totalFare.innerText = `BDT ${sSeat.length * 550}`;
         grandTotal.innerText = `BDT ${sSeat.length * 550}`;
         (sSeat.length == 0 || sSeat.length == 1) ? couponApply.setAttribute("disabled", "") : couponApply.removeAttribute("disabled", "");
@@ -90,6 +96,26 @@ for (let h = 0; h < hotSeat.length; h++) {
             const coupon = document.getElementById("coupon").value.toUpperCase();
             if (coupon === "NEW15") {
                 grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.15)}`;
+                if (sSeat.length == 2) {
+                    couponAlert.innerHTML =
+                        `<div role="alert" class="alert alert-info border-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-inter">Use <span class="font-bold">COUPON20</span> to get more discount!</span>
+              </div>`;
+                    setInterval(function () {
+                        couponAlert.innerHTML = "";
+                    }, 4000);
+                }
             } else if (sSeat.length == 2) {
                 if (coupon === "COUPLE20") {
                     grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
@@ -97,9 +123,47 @@ for (let h = 0; h < hotSeat.length; h++) {
             }
             else {
                 grandTotal.innerText = `BDT ${sSeat.length * 550}`;
+                if (coupon === "COUPLE20") {
+                    couponAlert.innerHTML = `<div role="alert" class="alert alert-error border-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="font-inter"><span class="font-bold">COUPON20</span> is only applicable for 2 Seats!</span>
+                </div>`}
+                setInterval(function () {
+                    couponAlert.innerHTML = "";
+                }, 5000);
             }
-            console.log(coupon);
         })
     });
-    selectCount.innerText = 0;
 }
+
+//Form Js Here
+
+const pname = document.getElementById("pname");
+const phone = document.getElementById("phone");
+
+submit.addEventListener("click", function () {
+    if (pname.value == "" && phone.value == "") {
+        pname.classList.add("border-red-600");
+        phone.classList.add("border-red-600");
+    } else if (phone.value == "") {
+        phone.classList.add("border-red-600");
+        pname.classList.remove("border-red-600");
+    } else if (pname.value == "") {
+        pname.classList.add("border-red-600");
+        phone.classList.remove("border-red-600");
+    } else {
+        pname.classList.remove("border-red-600");
+        phone.classList.remove("border-red-600");
+    }
+
+})

@@ -238,7 +238,7 @@
                 <!-- head -->
                 <thead  class="border-dashed border-b-2 border-b-gray-300">
                   <tr class="text-base">
-                    <th class="pl-0 pt-0 text-black">Seat <div class="badge bg-main-color text-white" id="selectCount"></div></th>
+                    <th class="pl-0 pt-0 text-black">Seat <div class="badge bg-main-color text-white" id="selectCount">0</div></th>
                     <th class="pl-0 pt-0 text-black">Class</th>
                     <th class="pr-0 pt-0 text-black text-right">Price</th>
                   </tr>
@@ -270,6 +270,8 @@
                 focus:border-0 " id="coupon"/>
                 <button class="btn bg-main-color text-white hover:bg-black border-0 absolute right-2" id="couponApply" disabled>Apply</button>
               </div>
+              <div id="couponAlert">
+              </div>
               <div class="flex justify-between font-inter font-bold">
                 <span>Grand Total</span>
                 <span id="grandTotal">BDT 0</span>
@@ -277,13 +279,13 @@
             </div>
           </div>
           <form class="form-control w-full max-w-full mb-5">
-              <label class="label font-bold pt-0 justify-start" for="name">Passenger Name <span class="text-red-600">*</span></label>
-            <input type="text" id="name" placeholder="Enter your name" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
+              <label class="label font-bold pt-0 justify-start" for="pname">Passenger Name <span class="text-red-600">*</span></label>
+            <input type="text" id="pname" placeholder="Enter your name" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
               <label class="label font-bold pt-0 justify-start" for="phone">Phone Number <span class="text-red-600">*</span></label>
             <input type="tel" id="phone" placeholder="Enter your phone number" class="input input-bordered focus:outline-0 w-full max-w-full mb-5" required/>
-              <label class="label font-bold pt-0" for="Passenger Name" id="email">Email ID</label>
+              <label class="label font-bold pt-0" for="email">Email ID</label>
             <input type="email" id="email" placeholder="Enter your email id" class="input input-bordered focus:outline-0 w-full max-w-full mb-6"/>
-            <button class="btn w-full bg-main-color text-white font-bold hover:bg-black" type="submit">Next</button>
+            <button class="btn w-full bg-main-color text-white font-bold hover:bg-black" type="button" id="submit" disabled>Next</button>
           </form>
           <div class="flex justify-around">
             <a class="link link-neutral">Terms and Conditions</a>
