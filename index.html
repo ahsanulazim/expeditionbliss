@@ -30,6 +30,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/9ec5a92cc1.js" crossorigin="anonymous"></script>
 </head>
 <body class="font-raleway">
     <header class="px-5">
@@ -163,42 +164,42 @@
 
 <!-- Ticketing Section -->
 
-    <section class="rounded-t-3xl bg-grey-color py-24 border-t-4 border-main-color">
+    <section class="rounded-t-3xl bg-grey-color px-5 py-24 border-t-4 border-main-color">
       <div class="max-w-7xl mx-auto">
       <h2 class="text-center font-bold text-4xl mb-10">Expedition Bliss</h2>
       <p class="font-inter text-center mb-10 text-slate-500 max-w-2xl mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
-      <div class="bg-white rounded-3xl flex justify-between mb-8">
-        <div class="p-8 grow">
-          <div class="flex justify-between mb-8">
-            <div class="flex gap-5">
-              <img src="./Assets/Icons/bus-logo.png" alt="Bus" srcset="">
+      <div class="bg-white rounded-3xl flex justify-between mb-8 items-center">
+        <div class="p-4 md:p-8 grow">
+          <div class="flex justify-between mb-4 md:mb-8 items-center">
+            <div class="flex gap-5 items-center">
+              <img class="hidden sm:block" src="./Assets/Icons/bus-logo.png" alt="Bus" srcset="">
               <div>
-                <h3 class="font-bold text-3xl">Greenline Travels</h3>
-                <p class="font-inter">Coach-008-XDA | AC_Luxury</p>
+                <h3 class="font-bold text-base sm:text-lg lg:text-2xl">Greenline Travels</h3>
+                <p class="font-inter text-xs hidden sm:block lg:text-sm">Coach-008-XDA | AC_Luxury</p>
               </div>
             </div>
             <button class="btn font-inter text-main-color bg-light-color border-0 hover:bg-light-color">
-              <img src="./Assets/Icons/seat-green.png" alt="Seat" srcset=""><span id="sitLeft">40</span>Seats Left</button>
+              <img src="./Assets/Icons/seat-green.png" alt="Seat" srcset=""><span id="sitLeft">40</span><span class="hidden lg:block">Seats</span> <span class="hidden lg:block">Left</span></button>
           </div>
-          <div class="bg-grey-color p-8 rounded-xl">
-            <div class="flex justify-between border-dashed border-b-2 pb-8">
-              <span>Route</span><span>Dhaka-Sylhet</span>
+          <div class="bg-grey-color p-4 md:p-7 rounded-xl">
+            <div class="flex justify-between border-dashed border-b-2 pb-4 md:pb-8 text-sm">
+              <i class="fa-solid fa-road block sm:hidden"></i><span class="hidden sm:block">Route</span><span>Dhaka-Sylhet</span>
             </div>
-            <div class="flex justify-between border-dashed border-b-2 py-8">
-              <span>Departure Time</span><span>9:00 PM</span>
+            <div class="flex justify-between border-dashed border-b-2 py-4 md:py-8 text-sm">
+              <i class="fa-solid fa-traffic-light block sm:hidden"></i><span class="hidden sm:block">Departure Time</span><span>9:00 PM</span>
             </div>
-            <div class="flex justify-between gap-8 pt-8">
-              <button class="btn grow bg-gray-300">Boarding Point - Laxmipur</button>
-              <button class="btn grow bg-gray-300">Dropping Point - Bogura</button>
-              <button class="btn grow bg-gray-300">Est. Time - 11 Hour</button>
+            <div class="flex justify-between gap-2 sm:gap-3 pt-4 md:pt-8 overflow-x-scroll">
+              <button class="btn grow bg-transparent sm:bg-gray-300 text-sm px-0 sm:px-2 shadow-none border-0"><i class="fa-solid fa-bus-simple block lg:hidden"></i> <span class="hidden lg:block">Boarding Point -</span> Laxmipur</button>
+              <button class="btn grow bg-transparent sm:bg-gray-300 text-sm px-0 sm:px-2 shadow-none border-0"><i class="fa-solid fa-location-dot block lg:hidden"></i> <span class="hidden lg:block">Dropping Point -</span> Bogura</button>
+              <button class="btn grow bg-transparent sm:bg-gray-300 text-sm px-0 sm:px-2 shadow-none border-0"><i class="fa-solid fa-clock block lg:hidden"></i> <span class="hidden lg:block">Est. Time -</span> 11 Hour</button>
             </div>
           </div>
         </div>
         <img src="./Assets/Images/info-devider.png" alt="ticket" srcset="">
-        <div class="text-center place-items-center flex flex-col justify-center p-10 pe-20">
+        <div class="text-center place-items-center flex flex-col justify-center px-3 sm:px-6 md:px-12">
           <img src="./Assets/Icons/fare.png" alt="Fare" srcset="">
-          <h3 class="font-bold text-3xl">550 Taka</h3>
-          <p class="font-bold text-xl text-gray-500">Per Seat</p>
+          <h3 class="font-bold text-sm sm:text-lg lg:text-2xl">550 Taka</h3>
+          <p class="font-bold text-xs sm:text-sm md:text-lg text-gray-500">Per Seat</p>
         </div>
       </div>
       <div class="bg-white rounded-3xl flex justify-between p-8">
