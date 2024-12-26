@@ -17,7 +17,7 @@ for (let i = 0; i < seat.length; i++) {
 
         const inputSeat = document.createElement("input");
         inputSeat.setAttribute("type", "button");
-        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0");
+        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0 text-xs md:text-base");
         inputSeat.setAttribute("value", `${seatCount}`);
         firstCol.appendChild(inputSeat);
     }
@@ -26,7 +26,7 @@ for (let i = 0; i < seat.length; i++) {
 
         const inputSeat = document.createElement("input");
         inputSeat.setAttribute("type", "button");
-        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0");
+        inputSeat.setAttribute("class", "hotSeat bg-grey-color btn font-inter block border-0 hover:border-0 text-xs md:text-base");
         inputSeat.setAttribute("value", `${seatCount}`);
         secondCol.appendChild(inputSeat);
     }
@@ -124,6 +124,45 @@ for (let h = 0; h < hotSeat.length; h++) {
                 if (coupon === "COUPLE20") {
                     grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
                 }
+                else {
+                    couponAlert.innerHTML = `<div role="alert" class="alert alert-warning">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span class="font-inter">Invalid coupon code try <span class="font-bold">"NEW15"</span> or <span class="font-bold">"COUPLE20"!</span></span>
+                </div>`
+                    setInterval(function () {
+                        couponAlert.innerHTML = "";
+                    }, 5000);
+                }
+            } else if (coupon !== "COUPLE20" || coupon !== "NEW15") {
+                console.log(coupon);
+
+                couponAlert.innerHTML = `<div role="alert" class="alert alert-warning">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span class="font-inter">Invalid coupon code try <span class="font-bold">"NEW15"</span> or <span class="font-bold">"COUPLE20"!</span></span>
+                </div>`;
+                setInterval(function () {
+                    couponAlert.innerHTML = "";
+                }, 5000);
             }
             else {
                 grandTotal.innerText = `BDT ${sSeat.length * 550}`;
@@ -142,9 +181,7 @@ for (let h = 0; h < hotSeat.length; h++) {
                   </svg>
                   <span class="font-inter"><span class="font-bold">COUPON20</span> is only applicable for 2 Seats!</span>
                 </div>`}
-                setInterval(function () {
-                    couponAlert.innerHTML = "";
-                }, 5000);
+
             }
         })
 
@@ -157,17 +194,49 @@ for (let h = 0; h < hotSeat.length; h++) {
 const pname = document.getElementById("pname");
 const phone = document.getElementById("phone");
 
+//Modal Call Logic Starts Here
+
+pname.addEventListener("keyup", function () {
+    if (event.key == "") {
+        submit.removeAttribute("onclick");
+    } else {
+        checkVal();
+    }
+
+})
+
+phone.addEventListener("keyup", function () {
+    if (event.key == "") {
+        submit.removeAttribute("onclick");
+    } else {
+        checkVal();
+    }
+
+})
+
+function checkVal() {
+    if (pname.value === "" || phone.value === "") {
+        submit.removeAttribute("onclick");
+    } else {
+        submit.setAttribute("onclick", "my_modal_1.showModal()");
+    }
+}
+
+//Modal Call Logic Ends Here
 
 submit.addEventListener("click", function () {
     if (pname.value == "" && phone.value == "") {
         pname.classList.add("border-red-600");
         phone.classList.add("border-red-600");
+        submit.removeAttribute("onclick");
     } else if (phone.value == "") {
         phone.classList.add("border-red-600");
         pname.classList.remove("border-red-600");
+        submit.removeAttribute("onclick");
     } else if (pname.value == "") {
         pname.classList.add("border-red-600");
         phone.classList.remove("border-red-600");
+        submit.removeAttribute("onclick");
     } else {
         pname.classList.remove("border-red-600");
         phone.classList.remove("border-red-600");
