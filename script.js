@@ -125,7 +125,7 @@ for (let h = 0; h < hotSeat.length; h++) {
                     grandTotal.innerText = `BDT ${(sSeat.length * 550) - ((sSeat.length * 550) * 0.2)}`;
                 }
                 else {
-                    couponAlert.innerHTML = `<div role="alert" class="alert alert-warning">
+                    couponAlert.innerHTML = `<div role="alert" class="alert alert-warning grid-flow-col text-left text-xs sm:text-base">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-6 shrink-0 stroke-current"
