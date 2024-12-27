@@ -183,10 +183,10 @@
           </div>
           <div class="bg-grey-color p-4 md:p-7 rounded-xl">
             <div class="flex justify-between border-dashed border-b-2 pb-4 md:pb-8 text-sm">
-              <i class="fa-solid fa-road block sm:hidden"></i><span class="hidden sm:block">Route</span><span>Dhaka-Sylhet</span>
+              <span>Route</span><span>Dhaka-Sylhet</span>
             </div>
             <div class="flex justify-between border-dashed border-b-2 py-4 md:py-8 text-sm">
-              <i class="fa-solid fa-traffic-light block sm:hidden"></i><span class="hidden sm:block">Departure Time</span><span>9:00 PM</span>
+              <span>Departure Time</span><span>9:00 PM</span>
             </div>
             <div class="flex justify-between gap-2 sm:gap-3 pt-4 md:pt-8 overflow-x-scroll sm:overflow-visible">
               <button class="btn grow bg-gray-300 text-sm px-0 sm:px-2 shadow-none border-0"><i class="fa-solid fa-bus-simple block lg:hidden"></i> <span class="hidden lg:block">Boarding Point -</span> Laxmipur</button>
@@ -229,19 +229,19 @@
 
 <!-- Seats HTML Buttons Here -->
 
-          <div class="flex gap-6 lg:gap-12">
-            <div class="flex grow">
-              <div id="serial" class="hidden lg:grid items-center mr-8 justify-items-center gap-7 grid-rows-11">
+          <div class="flex gap-4 md:gap-6 lg:gap-8 justify-between">
+              <div id="serial" class="text-xs md:text-base grid items-center justify-items-center gap-7 grid-rows-11 py-2">
                 <div></div>
               </div>
-              <div id="firstCol" class="grid grid-cols-2 grow gap-3 lg:gap-7 grid-rows-11 justify-items-stretch">
+              <div class="grid grid-cols-2 grow gap-x-6 sm:gap-x-4 md:gap-x-6 lg:gap-x-10">
+              <div id="firstCol" class="grid grid-cols-2 grow gap-3 lg:gap-5 grid-rows-11 justify-items-stretch">
                 <div disabled></div>
                 <div disabled></div>
               </div>
+            <div id="secondCol" class="grid grid-cols-2 grow gap-3 lg:gap-5 grid-rows-11 justify-items-stretch">
+              <button class="btn col-start-2 p-0" disabled><img src="./Assets/Icons/steering.svg" alt=""></button>
             </div>
-            <div id="secondCol" class="grid grid-cols-2 grow gap-3 lg:gap-7 grid-rows-11 justify-items-stretch">
-              <button class="btn col-start-2" disabled><img src="./Assets/Icons/steering.svg" alt=""></button>
-            </div>
+          </div>
           </div>
         </div>
 <!-- Second Column -->
@@ -255,7 +255,7 @@
                 <!-- head -->
                 <thead  class="border-dashed border-b-2 border-b-gray-300">
                   <tr class="text-xs md:text-base">
-                    <th class="pl-0 pt-0 text-black">Seat <div class="badge bg-main-color text-xs sm:text-base text-white" id="selectCount">0</div></th>
+                    <th class="pl-0 pt-0 text-black">Seat <div class="badge bg-main-color text-xs sm:text-sm text-white" id="selectCount">0</div></th>
                     <th class="pl-0 pt-0 text-black">Class</th>
                     <th class="pr-0 pt-0 text-black text-right">Price</th>
                   </tr>
